@@ -62,8 +62,6 @@ def explore():
                            posts=posts.items, next_url=next_url,
                            prev_url=prev_url)
 
-
-
 @bp.route('/search')
 @login_required
 def search():
@@ -216,3 +214,20 @@ def export_posts():
         current_user.launch_task('export_posts', _('Exporting posts...'))
         db.session.commit()
     return redirect(url_for('main.user', username=current_user.username))
+
+
+@bp.route('/delete/<int:id>')
+@login_required
+def delete(id):
+    post = Post.query.get(id)
+    if post is None:
+        flash('Post not found.')
+        return redirect(url_for('index'))
+    # if post.author.id != g.user.id:
+    if post.author.id != current_user.id:
+        flash('You cannot delete this post.')
+        return redirect(url_for('main.index'))
+    db.session.delete(post)
+    db.session.commit()
+    flash('Your post has been deleted.')
+    return redirect(url_for('main.index'))

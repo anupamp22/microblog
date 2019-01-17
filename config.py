@@ -21,3 +21,4 @@ class Config(object):
     POSTS_PER_PAGE = 10
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
     REDIS_URL = os.environ.get('REDIS_URL') or 'redis://'
+    UPLOAD_FOLDER=os.environ.get('UPLOAD_FOLDER') or '/home/anupam/eclipse-workspace/microblog-0.15/app/data'

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+  {% block app_content %}
+
+    {{ js_resources|indent(4)|safe }}
+    {{ css_resources|indent(4)|safe }}
+    <div id="wrapper">
+    <div id="left">
+    
+    {{ script0|indent(4)|safe }}
+    {{ div0|indent(4)|safe }}
+    
+    {{ script1|indent(4)|safe }}
+    {{ div1|indent(4)|safe }}
+    </div>
+    
+    <div id="right">
+    
+    {{ script2|indent(4)|safe }}
+    {{ div2|indent(4)|safe }}
+
+    {{ script3|indent(4)|safe }}
+    {{ div3|indent(4)|safe }}
+    </div>
+    </div>
+  {% endblock %}

@@ -27,6 +27,8 @@
                                 '{{ g.locale }}');">{{ _('Translate') }}</a>
                 </span>
                 {% endif %}
+                          <div><a href="{{ url_for('main.delete', id=post.id) }}">{{ _('Delete') }}</a></div>
+
             </td>
         </tr>
     </table>

@@ -1,7 +1,7 @@
 {% extends 'bootstrap/base.html' %}
 
 {% block title %}
-    {% if title %}{{ title }} - Microblog{% else %}{{ _('Welcome to Microblog') }}{% endif %}
+    {% if title %}{{ title }} - DataCrunch {% else %}{{ _('DataCrunch') }}{% endif %}
 {% endblock %}
 
 {% block navbar %}
@@ -14,12 +14,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url_for('main.index') }}">Microblog</a>
+                <a class="navbar-brand" href="{{ url_for('main.index') }}">DataCrunch</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url_for('main.index') }}">{{ _('Home') }}</a></li>
-                    <li><a href="{{ url_for('main.explore') }}">{{ _('Explore') }}</a></li>
+                    <li><a href="{{ url_for('main.explore') }}">{{ _('Explore') }}</a>
+                    <li><a href="{{ url_for('dashboard.dashboard1') }}">{{ _('Dashboard') }}</a>
+                    </li>
                 </ul>
                 {% if g.search_form %}
                 <form class="navbar-form navbar-left" method="get"
@@ -58,7 +60,7 @@
 
 {% block content %}
     <div class="container">
-      {% if current_user.is_authenticated %}
+<!--       {% if current_user.is_authenticated %}
         {% with tasks = current_user.get_tasks_in_progress() %}
         {% if tasks %}
             {% for task in tasks %}
@@ -69,7 +71,7 @@
             {% endfor %}
         {% endif %}
         {% endwith %}
-        {% endif %}
+        {% endif %} -->
         {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
