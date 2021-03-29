@@ -17,7 +17,7 @@ Pillow==5.4.1
 PyJWT==1.5.3
 PyMySQL==0.9.2
 PyYAML==3.13
-Pygments==2.3.1
+Pygments==2.7.4
 SQLAlchemy==1.1.14
 WTForms==2.1
 Werkzeug==0.14.1
